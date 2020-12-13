@@ -1,27 +1,29 @@
 type Mutation {
-	createMessage(
+	createVehicle(
+        year: String!
 		body: String!
-	): Message!
+        make: String!
+        model: String!
+        photoUrl: String
+	): Vehicle!
 }
 
 type Query {
-	getMessages(filter: String): [Message!]!
+	getVehicles(filter: String): [Vehicle!]!
 }
 
-type Subscription {
-	addMessage: Message
-		@aws_subscribe(mutations: ["createMessage"])
-}
 
-type Message {
-	messageId: String!
-	body: String!
+type Vehicle {
+	id: String!
+	year: String!
+    make: String!
+    model: String!
+    photoUrl: String
 	createdAt: String!
-	handle: String!
+    createBy: String!
 }
 
 schema {
 	query: Query
 	mutation: Mutation
-	subscription: Subscription
 }
