@@ -8,7 +8,7 @@
         "year" : { "S" : "${ctx.arguments.year}" },
         "make" : { "S" : "${ctx.arguments.make}" },
         "model" : { "S" : "${ctx.arguments.model}" },
-        "createdAt": {"S" : "$util.time.nowISO8601()" },
-        "createdBy": {"S" : "$utils.toJson($ctx.identity)" }
+        "photoUrl" : { "S" : "${ctx.arguments.photoUrl}" },
+        "createdAt": {"S" : "$util.time.nowISO8601()" }
     }
 }
