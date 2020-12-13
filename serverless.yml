@@ -41,6 +41,11 @@ custom:
         request: "createVehicle-request-mapping-template.txt"
         response: "createVehicle-response-mapping-template.txt"
       - dataSource: Vehicle
+        type: Mutation
+        field: updateVehicle
+        request: "updateVehicle-request-mapping-template.txt"
+        response: "updateVehicle-response-mapping-template.txt"  
+      - dataSource: Vehicle
         type: Query
         field: getVehicle
         request: "getVehicle-request-mapping-template.txt"

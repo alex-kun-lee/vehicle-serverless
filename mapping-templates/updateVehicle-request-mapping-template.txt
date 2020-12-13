@@ -1,0 +1,26 @@
+{
+  "version": "2017-02-28",
+  "operation": "UpdateItem",
+  "key": {
+    "id": {
+      "S": "${context.arguments.id}"
+    }
+  },
+  "update": {
+    "expression": "SET #year = :year, make = :make, model = :model",
+    "expressionNames": {
+      "#year": "year"
+    },
+    "expressionValues": {
+      ":year": {
+        "S": "${context.arguments.year}"
+      },
+      ":make": {
+        "S": "${context.arguments.make}"
+      },
+      ":model": {
+        "S": "${context.arguments.model}"
+      }
+    }
+  }
+}
