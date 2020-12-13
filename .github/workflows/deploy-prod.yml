@@ -10,7 +10,7 @@
 #
 
 
-name: Deploy Prod
+name: Prod Deploy
 on:
   push:
     branches:
