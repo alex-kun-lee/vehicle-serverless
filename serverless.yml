@@ -1,21 +1,10 @@
 app: vehicle-serverless-app
 service: vehicle-serverless
 org: alexkunlee
+
+
 provider:
   name: aws
   region: us-west-2
-  runtime: nodejs10.x
-  stage: ${opt:stage, self:custom.defaultStage}
-  environment:
-    appName: ${self:custom.environment.appName}
-functions:
-  vehicle:
-    handler: handler.vehicle
-    events:
-      - http:
-          path: vehicle
-          method: get
-          cors: true
-custom:
-    defaultStage: test
-    environment: ${file(env.yml):${self:provider.stage}, file(env.yml):default}
+  runtime: nodejs12.x
+  stage: ${opt:stage, "test"}

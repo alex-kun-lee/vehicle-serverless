@@ -1,0 +1,20 @@
+{
+    "default": {
+        "timeout": 120
+    },
+    "account": {
+        "id": "FIX THOIS PLSSDASDASD!!!!!!!"
+    },
+    "db": {
+        "table": {
+            "vehicle": {
+                "name": "${self:custom.base}-vehicles"
+            }
+        }
+    },
+    "s3": {
+        "bucket": {
+            "name": "${self:service}-${self:provider.stage}-bucket"
+        }
+    }
+}
