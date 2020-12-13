@@ -9,8 +9,8 @@ provider:
   environment:
     appName: ${self:custom.environment.appName}
 functions:
-  getvehicle:
-    handler: handler.getvehicle
+  vehicle:
+    handler: handler.vehicle
     events:
       - http:
           path: vehicle
