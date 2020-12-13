@@ -12,6 +12,8 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: '10.x'
+    - name: Install NPM dependencies
+      run: npm install
     - name: Install Serverless Framework
       run: npm install -g serverless
     - name: Serverless AWS authentication
@@ -21,8 +23,6 @@ jobs:
         cat > env.yml << EOF
         ${{ secrets.ENV }}
         EOF
-    - name: Install NPM dependencies
-      run: npm install
     # Optional
     #- name: Build assets
     #  run: npm run assets-dev
