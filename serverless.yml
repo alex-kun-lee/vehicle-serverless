@@ -1,4 +1,5 @@
 # Author: Alex Lee
+# Created Date: 2020-12-12
 
 # App Info
 app: vehicle-serverless-app
@@ -26,30 +27,34 @@ provider:
 # Customs
 custom:
   stage: test
-  output:
-    file: ./front/src/stack.json
   appSync:
     name: ${self:service}-${self:custom.stage}
     authenticationType: API_KEY
     logConfig:
       loggingRoleArn: { Fn::GetAtt: [AppSyncLoggingServiceRole, Arn] }
       level: ALL
+    mappingTemplatesLocation: src/mapping-templates
     mappingTemplates:
-      - dataSource: Vehicle
-        type: Mutation
-        field: createVehicle
-        request: "createVehicle-request-mapping-template.txt"
-        response: "createVehicle-response-mapping-template.txt"
-      - dataSource: Vehicle
-        type: Mutation
-        field: updateVehicle
-        request: "updateVehicle-request-mapping-template.txt"
-        response: "updateVehicle-response-mapping-template.txt"  
       - dataSource: Vehicle
         type: Query
         field: getVehicle
-        request: "getVehicle-request-mapping-template.txt"
-        response: "getVehicle-response-mapping-template.txt"
+        request: "get/getVehicle-request-mapping-template.txt"
+        response: "get/getVehicle-response-mapping-template.txt"
+      - dataSource: Vehicle
+        type: Mutation
+        field: createVehicle
+        request: "create/createVehicle-request-mapping-template.txt"
+        response: "create/createVehicle-response-mapping-template.txt"
+      - dataSource: Vehicle
+        type: Mutation
+        field: updateVehicle
+        request: "update/updateVehicle-request-mapping-template.txt"
+        response: "update/updateVehicle-response-mapping-template.txt"  
+      - dataSource: Vehicle
+        type: Mutation
+        field: deleteVehicle
+        request: "delete/deleteVehicle-request-mapping-template.txt"
+        response: "delete/deleteVehicle-response-mapping-template.txt" 
     schema: schema.graphql
     dataSources:
       - type: AMAZON_DYNAMODB
@@ -67,7 +72,7 @@ custom:
                 - "arn:aws:dynamodb:::table/Vehicle/*"
 
 resources:
-  - ${file(resources/roles.yml)}
-  - ${file(resources/dynamodb-table.yml)}
-  - ${file(resources/outputs.yml)}
+  - ${file(src/resources/roles.yml)}
+  - ${file(src/resources/dynamodb-table.yml)}
+  - ${file(src/resources/outputs.yml)}
   

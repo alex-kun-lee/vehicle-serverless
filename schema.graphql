@@ -8,18 +8,9 @@ type Query {
 }
 
 type Mutation {
-	createVehicle(
-        year: String!
-        make: String!
-        model: String!
-        photoUrl: String
-	): Vehicle
-    updateVehicle(
-        id: ID!
-        year: String!
-        make: String!
-        model: String!
-    ): Vehicle
+	createVehicle(year: String!, make: String!, model: String!, photoUrl: String!): Vehicle
+    updateVehicle(id: ID!, year: String!, make: String!, model: String!): Vehicle
+    deleteVehicle(id: ID!): Vehicle
 }
 
 type Vehicle {
