@@ -9,7 +9,6 @@
         "year" : { "S" : "${ctx.arguments.year}" },
         "make" : { "S" : "${ctx.arguments.make}" },
         "model" : { "S" : "${ctx.arguments.model}" },
-        "body" : { "S" : "${ctx.arguments.body}" },
         "createdAt": {"S" : "$util.time.nowISO8601()" },
         "createdBy": {"S" : "$ctx" }
     }

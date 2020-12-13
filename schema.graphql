@@ -9,7 +9,7 @@ type Mutation {
 }
 
 type Query {
-	getVehicles(filter: String): [Vehicle!]!
+	getVehicle(filter: String): [Vehicle!]!
 }
 
 
