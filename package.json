@@ -4,10 +4,16 @@
     "description": "",
     "main": "handler.js",
     "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1"
     },
     "keywords": [],
     "author": "",
-    "license": "ISC"
-  }
-  
+    "license": "ISC",
+    "dependencies": {
+        "serverless-appsync-plugin": "^1.0.5",
+        "serverless-stack-output": "^0.2.3"
+    },
+    "devDependencies": {
+        "aws-sdk": "^2.344.0"
+    }
+}
