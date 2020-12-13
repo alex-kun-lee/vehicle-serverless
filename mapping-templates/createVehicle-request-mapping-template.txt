@@ -2,7 +2,6 @@
     "version" : "2017-02-28",
     "operation" : "PutItem",
     "key" : {
-        "createBy" : { "S" : "${ctx.identity.username}" },
         "id" : { "S" : "$util.autoId()" }
     },
     "attributeValues" : {
@@ -10,6 +9,6 @@
         "make" : { "S" : "${ctx.arguments.make}" },
         "model" : { "S" : "${ctx.arguments.model}" },
         "createdAt": {"S" : "$util.time.nowISO8601()" },
-        "createdBy": {"S" : "$ctx" }
+        "createdBy": {"S" : "$utils.toJson($ctx.identity)" }
     }
 }
