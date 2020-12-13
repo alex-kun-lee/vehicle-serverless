@@ -1,16 +1,16 @@
 Resources:
-  MessagesTable:
+  VehicleTable:
     Type: 'AWS::DynamoDB::Table'
     Properties:
       KeySchema:
         -
-          AttributeName: createdAt
+          AttributeName: id
           KeyType: HASH
       AttributeDefinitions:
         -
-          AttributeName: createdAt
+          AttributeName: id
           AttributeType: S
       ProvisionedThroughput:
         ReadCapacityUnits: 1
         WriteCapacityUnits: 1
-      TableName: 'Messages'
+      TableName: 'Vehicle'

@@ -11,7 +11,6 @@ Resources:
             Principal:
               Service:
                 - "appsync.amazonaws.com"
-                - "dynamodb.amazonaws.com"
             Action:
               - "sts:AssumeRole"
       Policies:
@@ -31,8 +30,8 @@ Resources:
                   - "dynamodb:Scan"
                   - "dynamodb:UpdateItem"
                 Resource:
-                  - "arn:aws:dynamodb:${self:provider.region}::table/Messages"
-                  - "arn:aws:dynamodb:${self:provider.region}::table/Messages/*"
+                  - "arn:aws:dynamodb:${self:provider.region}:974166190023:table/Vehicle"
+                  - "arn:aws:dynamodb:${self:provider.region}:974166190023:table/Vehicle/*"
   AppSyncLoggingServiceRole:
     Type: "AWS::IAM::Role"
     Properties:

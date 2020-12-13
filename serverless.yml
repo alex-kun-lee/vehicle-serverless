@@ -1,7 +1,11 @@
+# Author: Alex Lee
+
+# App Info
 app: vehicle-serverless-app
 service: vehicle-serverless
 org: alexkunlee
 
+# Plugins
 plugins:
    - serverless-stack-output
    - serverless-appsync-plugin
@@ -19,6 +23,7 @@ provider:
   runtime: nodejs12.x
   stage: ${opt:stage, "test"}
 
+# Customs
 custom:
   stage: test
   output:
@@ -30,31 +35,31 @@ custom:
       loggingRoleArn: { Fn::GetAtt: [AppSyncLoggingServiceRole, Arn] }
       level: ALL
     mappingTemplates:
-      - dataSource: Messages
+      - dataSource: Vehicle
         type: Mutation
-        field: createMessage
-        request: "createMessage-request-mapping-template.txt"
-        response: "createMessage-response-mapping-template.txt"
-      - dataSource: Messages
+        field: createVehicle
+        request: "createVehicle-request-mapping-template.txt"
+        response: "createVehicle-response-mapping-template.txt"
+      - dataSource: Vehicle
         type: Query
-        field: getMessages
-        request: "getMessages-request-mapping-template.txt"
-        response: "getMessages-response-mapping-template.txt"
+        field: getVehicle
+        request: "getVehicle-request-mapping-template.txt"
+        response: "getVehicle-response-mapping-template.txt"
     schema: schema.graphql
     dataSources:
       - type: AMAZON_DYNAMODB
-        name: Messages
-        description: Messages Table
+        name: Vehicle
+        description: Vehicle Table
         config:
-          tableName: { Ref: MessagesTable }
+          tableName: { Ref: VehicleTable }
           serviceRoleArn: { Fn::GetAtt: [AppSyncDynamoDBServiceRole, Arn] } 
           iamRoleStatements:
             - Effect: "Allow"
               Action:
                 - "dynamodb:*"
               Resource:
-                - "arn:aws:dynamodb:::table/Messages"
-                - "arn:aws:dynamodb:::table/Messages/*"
+                - "arn:aws:dynamodb:::table/Vehicle"
+                - "arn:aws:dynamodb:::table/Vehicle/*"
 
 resources:
   - ${file(resources/roles.yml)}
