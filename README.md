@@ -20,7 +20,7 @@ As part of coding challenge for Serverless Guru, this project will feature CRUD 
 
 ## Screenshots
 
-- 
+- Test
 - 
 - 
 
