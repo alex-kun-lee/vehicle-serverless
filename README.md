@@ -15,8 +15,7 @@ As part of coding challenge for Serverless Guru, this project will feature CRUD 
 - Vehicle CRUD operations fully automated using IAC.
 - Built using Serverless Framework to automatically deploy all AWS Infrastrcutures.
 - Integration of AWS AppSync with Serverless Framework to enable GraphQL.
-- Integration of Gihub to trigger Serverless deployment after branch push (test / prod)
-- Uses Serverless Pro for deployment and monitoring
+- Use of Serverless Pro CI/CD to trigger multi-stage branch deployment from Github.
 
 ## Screenshots
 
