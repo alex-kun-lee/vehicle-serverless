@@ -4,7 +4,6 @@
 # App Info
 service: vehicle-serverless
 org: alexkunlee
-app: vehicle-serverless
 
 # Plugins
 plugins:
