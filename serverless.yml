@@ -2,9 +2,9 @@
 # Created Date: 2020-12-12
 
 # App Info
-service: vehicle-serverless
 app: vehicle-serverless
 org: alexkunlee
+service: vehicle-serverless
 
 # Plugins
 plugins:
