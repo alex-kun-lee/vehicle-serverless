@@ -26,7 +26,7 @@ provider:
 
 # Customs
 custom:
-  stage: test
+  stage: ${opt:stage, "test"}
   appSync:
     name: ${self:service}-${self:custom.stage}
     authenticationType: API_KEY
