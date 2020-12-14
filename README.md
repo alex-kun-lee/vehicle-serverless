@@ -16,18 +16,13 @@ As part of coding challenge for Serverless Guru, this project will feature CRUD 
 - Built using Serverless Framework to automatically deploy all AWS Infrastrcutures.
 - Integration of AWS AppSync with Serverless Framework to enable GraphQL.
 - Use of Serverless Pro CI/CD to trigger multi-stage branch deployment from Github.
+- Use of ReactJS to display all vehicles using Apollo Client. [Repo Link](https://github.com/alex-kun-lee/vehicle-react-app)
 
-## Screenshots
-- Testing for test branch
-- 
-- 
+## Screenshots of Severless Pro
+<img src="src/img/img1.png" width="700"/>
+<img src="src/img/img2.png" width="700"/>
+<img src="src/img/img3.png" width="700"/>
 
-
-## Usage
-
-```sh
-There are many instructions
-```
 
 ## Author
 
