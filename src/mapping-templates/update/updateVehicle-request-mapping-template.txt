@@ -20,9 +20,6 @@
       },
       ":model": {
         "S": "${context.arguments.model}"
-      },
-      ":photoUrl": {
-        "S": "${context.arguments.photoUrl}"
       }
     }
   }
