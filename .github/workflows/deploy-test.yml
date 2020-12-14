@@ -14,9 +14,9 @@ jobs:
         node-version: '10.x'
     - name: Install Serverless Framework
       run: npm install -g serverless
-    - name: Install NPM dependencies
+    - name: Install NPM Dependencies
       run: npm install  
-    - name: Serverless AWS authentication
+    - name: Serverless AWS Authentication
       run: sls config credentials --provider aws --key ${{ secrets.AWS_KEY }} --secret ${{ secrets.AWS_SECRET }}
     - name: Deploy to AWS using Serverless
       run: sls deploy -s test
