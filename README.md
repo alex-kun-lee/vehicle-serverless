@@ -18,7 +18,7 @@ As part of coding challenge for Serverless Guru, this project will feature CRUD 
 - Use of Serverless Pro CI/CD to trigger multi-stage branch deployment from Github.
 
 ## Screenshots
-- Test 4
+- Testing for test branch
 - 
 - 
 
