@@ -2,9 +2,9 @@
 # Created Date: 2020-12-12
 
 # App Info
-service: vehicle-serverless
 app: vehicle-serverless
 org: alexkunlee
+service: vehicle-serverless
 
 # Plugins
 plugins:
@@ -26,9 +26,8 @@ provider:
 
 # Customs
 custom:
-  stage: test
   appSync:
-    name: ${self:service}-${self:custom.stage}
+    name: ${self:service}-${self:provider.stage}
     authenticationType: API_KEY
     logConfig:
       loggingRoleArn: { Fn::GetAtt: [AppSyncLoggingServiceRole, Arn] }

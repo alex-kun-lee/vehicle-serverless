@@ -1,5 +1,5 @@
 
-name: Test Deploy
+name: Test Deployment
 on:
   push:
     branches:
@@ -14,20 +14,9 @@ jobs:
         node-version: '10.x'
     - name: Install Serverless Framework
       run: npm install -g serverless
-    - name: Serverless AWS authentication
-      run: sls config credentials --provider aws --key ${{ secrets.AWS_ACCESS_KEY_ID }} --secret ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-    - name: Create env file
-      run: | # cp sample.env.yml env.yml
-        cat > env.yml << EOF
-        ${{ secrets.ENV }}
-        EOF
-    - name: Install NPM dependencies
-      run: npm install
-    # Optional
-    #- name: Build assets
-    #  run: npm run assets-dev
-    - name: Deploy Lambda functions
+    - name: Install NPM Dependencies
+      run: npm install  
+    - name: Serverless AWS Authentication
+      run: sls config credentials --provider aws --key ${{ secrets.AWS_KEY }} --secret ${{ secrets.AWS_SECRET }}
+    - name: Deploy to AWS using Serverless
       run: sls deploy -s test
-    # Optional (to use with serverless-finch serverless plugin)
-    #- name: Deploy assets to S3
-    #  run: sls client deploy --no-delete-contents --no-confirm -s dev
