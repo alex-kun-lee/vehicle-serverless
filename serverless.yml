@@ -2,7 +2,7 @@
 # Created Date: 2020-12-12
 
 # App Info
-service: vehicle-serverless
+service: vehicle-serverless-${self:provider.stage}
 org: alexkunlee
 
 # Plugins
