@@ -25,9 +25,8 @@ provider:
 
 # Customs
 custom:
-  stage: test
   appSync:
-    name: ${self:service}-${self:custom.stage}
+    name: ${self:service}-${self:provider.stage}
     authenticationType: API_KEY
     logConfig:
       loggingRoleArn: { Fn::GetAtt: [AppSyncLoggingServiceRole, Arn] }
