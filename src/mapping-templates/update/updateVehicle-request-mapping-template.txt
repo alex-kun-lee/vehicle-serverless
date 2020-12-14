@@ -7,7 +7,7 @@
     }
   },
   "update": {
-    "expression": "SET #year = :year, make = :make, model = :model, photoUrl =:photoUrl",
+    "expression": "SET #year = :year, make = :make, model = :model",
     "expressionNames": {
       "#year": "year"
     },
