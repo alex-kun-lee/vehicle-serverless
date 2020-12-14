@@ -7,7 +7,7 @@
     }
   },
   "update": {
-    "expression": "SET #year = :year, make = :make, model = :model, photoUrl =:photoUrl",
+    "expression": "SET #year = :year, make = :make, model = :model",
     "expressionNames": {
       "#year": "year"
     },
@@ -20,9 +20,6 @@
       },
       ":model": {
         "S": "${context.arguments.model}"
-      },
-      ":photoUrl": {
-        "S": "${context.arguments.photoUrl}"
       }
     }
   }

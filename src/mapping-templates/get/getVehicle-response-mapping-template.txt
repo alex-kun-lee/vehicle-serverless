@@ -1,1 +1,1 @@
-$utils.toJson($ctx.result)
+$utils.toJson($ctx.result.items)
