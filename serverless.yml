@@ -2,7 +2,6 @@
 # Created Date: 2020-12-12
 
 # App Info
-app: vehicle-serverless-app
 service: vehicle-serverless
 org: alexkunlee
 
