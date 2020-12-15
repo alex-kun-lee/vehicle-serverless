@@ -74,5 +74,4 @@ custom:
 resources:
   - ${file(src/resources/roles.yml)}
   - ${file(src/resources/dynamodb-table.yml)}
-  - ${file(src/resources/outputs.yml)}
   
